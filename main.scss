@@ -1,0 +1,21 @@
+@mixin button-style($size: 16px) {
+  background-color: red;
+  padding: 5px 15px;
+  font-size: $size;
+  &:hover {
+    font-size: calc($size - 10px);
+  }
+}
+
+.btn {
+  color: green;
+  @include button-style();
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .btn {
+    @include button-style(20px);
+  }
+}
+
+// 4k => 4
